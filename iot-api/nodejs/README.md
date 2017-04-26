@@ -1,28 +1,29 @@
-In this implementation several files are defined
-* package.json that handles all the dependencies
-* app.js that defines the expressjs web server
-* index.js that run the server
-
-On top of those, the file test/functional.js defines a simple test that starts the API, send data and verify the returned HTTP Status Code is 201.
+In this implementation, we are using the *influx* npm library to connect to the underlying InfluxDB database.
 
 ## Starting the API
 
+To start the API, the IP address of the InfluxDB host needs to be provided.
+
 ````
-npm start
+INFLUXDB_HOST=localhost npm start
 ````
 
 ## Running the test
 
-````
-npm test
+To test the API, the IP address of the underlying InfluxDB database also need to be provided
 
-> iot@1.0.0 test /Users/luc/IoT-demo-project/step1/nodejs
+````
+INFLUXDB_HOST=localhost npm test
+
+> iot@1.0.0 test /Users/luc/perso/Dropbox/Work/Side/Docker/IoT-demo-project/step4/nodejs
 > mocha test/functional.js
+
 
   Creation
 info: server listening on port 3000
 info:  ts=2017-03-11T15:00:53Z, type=temp, value=34, sensor_id=123
-    ✓ should create dummy data (45ms)
+    ✓ should create dummy data (83ms)
 
-  1 passing (58ms)
+
+  1 passing (97ms)
 ````
