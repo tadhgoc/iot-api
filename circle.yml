@@ -11,7 +11,7 @@ deployment:
     branch: [ master ]
     commands:
       - docker build --rm=false -t tadhgoc/iot-api:$CIRCLE_BRANCH .
-      - docker tag lutadhgoccj/iot-api:$CIRCLE_BRANCH tadhgoc/iot-api:$CIRCLE_SHA1
+      - docker tag tadhgoc/iot-api:$CIRCLE_BRANCH tadhgoc/iot-api:$CIRCLE_SHA1
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker push tadhgoc/iot-api:$CIRCLE_BRANCH
       - docker push tadhgoc/iot-api:$CIRCLE_SHA1
